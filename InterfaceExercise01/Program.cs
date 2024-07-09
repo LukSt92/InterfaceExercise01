@@ -11,12 +11,22 @@ namespace InterfaceExercise01
         static void Main(string[] args)
         {
             TallGuy tallGuy = new TallGuy() { Name ="Jimmy", Height = 76};
+            tallGuy.TalkAboutYourself();
+            Console.WriteLine($"The tall guy has {tallGuy.FunnyThingIHave}");
+            tallGuy.Honk();
         }
     }
-    class TallGuy
+    class TallGuy : IClown
     {
         public string Name;
         public int Height;
+
+        public string FunnyThingIHave { get { return "big shoes"; } }
+
+        public void Honk()
+        {
+            Console.WriteLine("Honk honk!");
+        }
 
         public void TalkAboutYourself()
         {
